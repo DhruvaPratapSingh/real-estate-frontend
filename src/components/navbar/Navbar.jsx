@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./navbar.scss";
 import logo from "/logo.png"
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const Navbar=()=>{
   const [menubar,setmenubar]=useState(false);
@@ -11,28 +11,28 @@ const Navbar=()=>{
   return (
     <nav>
      <div className="left">
-      <a href="/" className="logo">
+      <Link href="/" className="logo">
         <img src={logo} alt="logo" />
         <span>Apartment</span>
-      </a>
-      <a href="/">Home</a>
-      <a href="/">about</a>
-      <a href="/">Contact</a>
-      <a href="/">Agents</a>
+      </Link>
+      <Link href="/">Home</Link>
+      <Link href="/">about</Link>
+      <Link href="/">Contact</Link>
+      <Link href="/">Agents</Link>
      </div>
      <div className="right">
-      <a href="/">sigh in</a>
-      <a href="/" className="register">sigh up</a>
+      <Link href="/">sigh in</Link>
+      <Link href="/" className="register">sigh up</Link>
       <div className="menuIcon" >
        <img src="/menu.png" alt="menu" onClick={handleclick} />
       </div>
      <div className={menubar?"menu active":"menu"}>
-      <a href="/">Home</a>
-      <a href="/">about</a>
-      <a href="/">Contact</a>
-      <a href="/">Agents</a>
-      <a href="/">sign in</a>
-      <a href="/">sign up</a>
+      <Link href="/">Home</Link>
+      <Link href="/">about</Link>
+      <Link href="/">Contact</Link>
+      <Link href="/">Agents</Link>
+      <Link href="/">sign in</Link>
+      <Link href="/">sign up</Link>
       </div>
      </div>
     </nav>
