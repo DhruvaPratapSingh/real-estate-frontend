@@ -13,7 +13,7 @@
       text-transform: capitalize;
 
       &.active {
-        background-color: black;
+        background-color: orangered;
         color: white;
       }
 
@@ -81,7 +81,6 @@
       @include sm{
         padding: 10px;
       }
-
       img {
         width: 24px;
         height: 24px;
