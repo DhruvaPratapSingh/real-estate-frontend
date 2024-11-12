@@ -29,7 +29,7 @@
       justify-content: center;
 
       img {
-        width: 50px;
+        width: 30px;
 
         @include md {
           width: 30px;
@@ -43,6 +43,9 @@
           transform: rotate(180deg);
         }
       }
+    }
+    .arrow:hover{
+      transform: scale(0.85);
     }
     .imgContainer {
       flex: 10;
