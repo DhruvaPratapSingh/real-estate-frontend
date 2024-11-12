@@ -2,40 +2,61 @@ import { useState } from "react";
 import "./navbar.scss";
 import logo from "/logo.png"
 import { Link } from "react-router-dom";
+function Navbar() {
+  const [open, setOpen] = useState(false);
 
-const Navbar=()=>{
-  const [menubar,setmenubar]=useState(false);
-  const handleclick=()=>{
-    setmenubar(!menubar);
-  }
+  const user = true;
   return (
     <nav>
-     <div className="left">
-      <Link href="/" className="logo">
-        <img src={logo} alt="logo" />
-        <span>Apartment</span>
-      </Link>
-      <Link href="/">Home</Link>
-      <Link href="/">about</Link>
-      <Link href="/">Contact</Link>
-      <Link href="/">Agents</Link>
-     </div>
-     <div className="right">
-      <Link href="/">sigh in</Link>
-      <Link href="/" className="register">sigh up</Link>
-      <div className="menuIcon" >
-       <img src="/menu.png" alt="menu" onClick={handleclick} />
+      <div className="left">
+        <a href="/" className="logo">
+          <img src={logo} alt="" />
+          <span>Apartment</span>
+        </a>
+        <a href="/">Home</a>
+        <a href="/">About</a>
+        <a href="/">Contact</a>
+        <a href="/">Agents</a>
       </div>
-     <div className={menubar?"menu active":"menu"}>
-      <Link href="/">Home</Link>
-      <Link href="/">about</Link>
-      <Link href="/">Contact</Link>
-      <Link href="/">Agents</Link>
-      <Link href="/">sign in</Link>
-      <Link href="/">sign up</Link>
+      <div className="right">
+        {user ? (
+          <div className="user">
+            <img
+              src="https://www.pngitem.com/pimgs/m/22-220721_circled-user-male-type-user-colorful-icon-png.png"
+              alt=""
+            />
+            <span>rohit</span>
+            <Link to="/profile" className="profile">
+              <div className="notification">3</div>
+              <span>Profile</span>
+            </Link>
+          </div>
+        ) : (
+          <>
+            <a href="/">Sign in</a>
+            <a href="/" className="register">
+              Sign up
+            </a>
+          </>
+        )}
+        <div className="menuIcon">
+          <img
+            src="/menu.png"
+            alt=""
+            onClick={() => setOpen((prev) => !prev)}
+          />
+        </div>
+        <div className={open ? "menu active" : "menu"}>
+          <a href="/">Home</a>
+          <a href="/">About</a>
+          <a href="/">Contact</a>
+          <a href="/">Agents</a>
+          <a href="/">Sign in</a>
+          <a href="/">Sign up</a>
+        </div>
       </div>
-     </div>
     </nav>
-  )
+  );
 }
+
 export default Navbar;

@@ -8,11 +8,13 @@
     flex-direction: column;
     overflow: scroll;
   }
-
+  ::-webkit-scrollbar {
+    width: 2px;
+}
   .details {
     flex: 4;
     height: 100%;
-    overflow-y: scroll;
+    overflow-y: auto;
 
     @include md {
       flex: none;

@@ -1,5 +1,8 @@
 @import "../../responsive.scss";
 
+::-webkit-scrollbar {
+  width: 2px;
+}
 .profilePage {
   display: flex;
   height: 100%;
@@ -10,7 +13,7 @@
   }
 
   .details {
-    flex: 3;
+    flex: 4;
     overflow-y: scroll;
     padding-bottom: 50px;
 
