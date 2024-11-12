@@ -4,7 +4,6 @@ import logo from "/logo.png"
 import { Link } from "react-router-dom";
 function Navbar() {
   const [open, setOpen] = useState(false);
-
   const user = true;
   return (
     <nav>
