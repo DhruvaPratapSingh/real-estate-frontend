@@ -26,6 +26,7 @@ const ProfilePage = () => {
                   E-mail: <b>rohit@gmail.com</b>
                 </span>
               </div>
+                <button className="btn">Logout</button>
               <div className="title">
                 <h1>My List</h1>
                 <button>Create New Post</button>
